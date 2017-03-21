@@ -1,0 +1,14 @@
+body{
+	background-color: #e5dc60;
+}
+#navbar{
+	background-color: transparent;
+	border:none;
+
+}
+#button{
+	font-family:fantasy; 
+	font-size:35px;
+	font-weight: bolder;
+	color: red;
+}
