@@ -9,7 +9,7 @@ function getRecipe(ingredients) {
     // Sorting results parameter;  r by rating and t for trending.  Using rating for default.
     var sort = "r";
 
-    var queryURL = "http://food2fork.com/api/search?key=" + APIkey + "&q=" + ingredients + "&sort=" + sort;
+    var queryURL = "https://food2fork.com/api/search?key=" + APIkey + "&q=" + ingredients + "&sort=" + sort;
     // console.log(queryURL);
 
     $.ajax({
