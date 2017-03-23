@@ -53,6 +53,10 @@ body {
     display: none;
 }
 
+#recipe-title {
+		color: #ff0000;
+}
+
 @media screen and (max-width:500px) {
     .no-float-mobile {
         float: none;
