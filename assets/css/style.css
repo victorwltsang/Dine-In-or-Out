@@ -1,14 +1,60 @@
-body{
-	background-color: #e5dc60;
+body {
+    background-color: white;
 }
-#navbar{
-	background-color: transparent;
-	border:none;
 
+#navbar {
+    background-color: #c01823;
+    border-radius: none;
+    padding: 10px;
 }
-#button{
-	font-family:fantasy; 
-	font-size:35px;
-	font-weight: bolder;
-	color: red;
+
+.navbar-brand {
+    color: white !important;
+}
+
+#button {
+    font-family: fantasy;
+    font-size: 35px;
+    font-weight: bolder;
+    color: red;
+}
+
+.row-spacing {
+    margin: 40px 0;
+}
+
+.snippet-spacing {
+    margin-top: 10px;
+}
+
+.food-cat-spacing {
+    margin-top: 5px;
+}
+
+.link-size {
+    font-size: 18px;
+}
+
+.rating-img {
+    width: 130px;
+    height: auto;
+}
+
+.snippet-img {
+    height: 40px;
+    width: 40px;
+}
+
+.display-block {
+    display: block;
+}
+
+.food-cat:last-child {
+    display: none;
+}
+
+@media screen and (max-width:500px) {
+    .no-float-mobile {
+        float: none;
+    }
 }
