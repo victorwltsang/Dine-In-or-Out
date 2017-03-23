@@ -1,6 +1,6 @@
 function yelpCallback(yelpData) {
 
-    console.log(yelpData);
+    // console.log(yelpData);
     var rawTemplate = $("#yelp-template").html();
     var compiledTemplate = Handlebars.compile(rawTemplate);
     var generatedHTML = compiledTemplate(yelpData);
