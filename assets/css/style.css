@@ -15,12 +15,15 @@ body {
 }
 
 .navbar-brand {
-    color: white !important;
+    color: #23e22c !important;
 }
 
 .jumbotron {
-    margin: 0 50px;
-    background-color: #8e723e;
+    margin: 0 175px;
+    background-color: #c01823;
+    text-align: center;
+    font-family: 'Fontdiner Swanky', cursive;
+    color: #23e22c;
 }
 
 #button {
