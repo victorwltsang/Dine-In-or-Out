@@ -53,8 +53,13 @@ body {
     display: none;
 }
 
-@media screen and (max-width:500px) {
-    .no-float-mobile {
-        float: none;
+@media screen and (max-width:768px) {
+    button {
+        width: 100%;
+        margin-top: 2px;
+    }
+    .navbar-brand {
+        text-align: center;
+        width: 100%;
     }
 }

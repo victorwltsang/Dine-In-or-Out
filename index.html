@@ -16,26 +16,21 @@
 			<div class="container-fluid">
 				<!-- Brand and toggle get grouped for better mobile display -->
 				<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                                  <span class="sr-only">Toggle navigation</span>
-                                  <span class="icon-bar"></span>
-                                  <span class="icon-bar"></span>
-                                  <span class="icon-bar"></span>
-                        </button>
+
 					<a id="button" class="navbar-brand" href="#">Dine In-or-Out</a>
 				</div>
 
 				<!-- Collect the nav links, forms, and other content for toggling -->
-				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-					<form class="navbar-form navbar-right">
 
-						<div class="form-group">
-							<input type="text" class="form-control" placeholder="Search">
-						</div>
-						<button type="submit" data-option="dine-in" class="btn btn-default">Dine In</button>
-						<button type="submit" data-option="dine-out" class="btn btn-default">Dine Out</button>
-					</form>
-				</div>
+				<form class="navbar-form navbar-right">
+
+					<div class="form-group">
+						<input type="text" class="form-control" placeholder="Search">
+					</div>
+					<button type="submit" data-option="dine-in" class="btn btn-default btn-font">Dine In</button>
+					<button type="submit" data-option="dine-out" class="btn btn-default btn-font">Dine Out</button>
+				</form>
+
 				<!-- /.navbar-collapse -->
 			</div>
 			<!-- /.container-fluid -->
@@ -44,53 +39,55 @@
 			<div id="result">
 
 			</div>
+			<script id="yelp-template" type="x-handlebars-template">
+				{{#each businesses}}
+				<div class="row row-spacing">
+					<div class="col-sm-6 media">
+
+						<div class="media-left no-float-mobile">
+							<img class="img-rounded" src="{{image_url}}" />
+						</div>
+						<div class="media-body">
+							<a class="display-block link-size" href="{{url}}" target="_blank" alt="See on Yelp!">{{name}}</a>
+
+							<img class="rating-img" src="{{rating_img_url_large}}" />
+							<span class="small">{{review_count}} reviews</span>
+							<div class="food-cat-spacing">
+								{{#each categories}}
+								<span class="food-cat">{{this.[0]}}</span>
+								<span class="food-cat">,</span> {{/each}}
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<p>{{location.neighborhoods}}</p>
+						{{#each location.display_address}}
+						<span class="display-block">{{this}}</span> {{/each}}
+						<span class="display-block">{{phone}}</span>
+					</div>
+					<div class="clearfix"></div>
+					<div class="col-sm-12 snippet-spacing">
+						<div class="media-left">
+							<img class="snippet-img img-rounded" src="{{snippet_image_url}}" />
+						</div>
+						<div class="media-body">
+							<p class="">{{snippet_text}}
+								<a href="{{url}}" target="_blank"> read more </a>
+							</p>
+						</div>
+
+					</div>
+
+				</div>
+				<hr> {{/each}}
+
+
+			</script>
 
 
 		</div>
-		<script id="yelp-template" type="x-handlebars-template">
-			{{#each businesses}}
-			<div class="row row-spacing">
-				<div class="col-sm-6 media">
-
-					<div class="media-left no-float-mobile">
-						<img class="img-rounded" src="{{image_url}}" />
-					</div>
-					<div class="media-body">
-						<a class="display-block link-size" href="{{url}}" target="_blank" alt="See on Yelp!">{{name}}</a>
-
-						<img class="rating-img" src="{{rating_img_url_large}}" />
-						<span class="small">{{review_count}} reviews</span>
-						<div class="food-cat-spacing">
-							{{#each categories}}
-							<span class="food-cat">{{this.[0]}}</span>
-							<span class="food-cat">,</span> {{/each}}
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-6">
-					<p>{{location.neighborhoods}}</p>
-					{{#each location.display_address}}
-					<span class="display-block">{{this}}</span> {{/each}}
-					<span class="display-block">{{phone}}</span>
-				</div>
-				<div class="clearfix"></div>
-				<div class="col-sm-12 snippet-spacing">
-					<div class="media-left">
-						<img class="snippet-img img-rounded" src="{{snippet_image_url}}" />
-					</div>
-					<div class="media-body">
-						<p class="">{{snippet_text}}
-							<a href="{{url}}" target="_blank"> read more </a>
-						</p>
-					</div>
-
-				</div>
-
-			</div>
-			<hr> {{/each}}
 
 
-		</script>
 		<script src="https://code.jquery.com/jquery-3.2.0.min.js" integrity="sha256-JAW99MJVpJBGcbzEuXk4Az05s/XyDdBomFqNlM3ic+I=" crossorigin="anonymous"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 		<script type="text/javascript" src="./assets/js/OAuth.js"></script>
