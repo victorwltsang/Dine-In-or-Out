@@ -1,5 +1,3 @@
-$(document).domain = 'food2fork.com';
-
 function getRecipe(ingredients) {
 
     // These are not the API Keys you're looking for
@@ -15,9 +13,6 @@ function getRecipe(ingredients) {
     // console.log(queryURL);
 
     $.ajax({
-        xhrFields: {
-            cors: false
-        },
         url: queryURL,
         method: "GET"
     }).done(function(recipeResults) {
