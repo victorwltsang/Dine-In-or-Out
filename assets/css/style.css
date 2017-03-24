@@ -80,4 +80,7 @@ body {
     .jumbotron {
         margin-top: 20%;
     }
+    #result {
+        margin-top: 20%;
+    }
 }
