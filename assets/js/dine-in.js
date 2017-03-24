@@ -11,7 +11,7 @@ function getRecipe(ingredients) {
 
     var queryURL = "http://food2fork.com/api/search?key=" + APIkey + "&q=" + ingredients + "&sort=" + sort;
     // console.log(queryURL);
-
+    $(document).domain = 'food2fork.com';
     $.ajax({
         xhrFields: {
             cors: false
