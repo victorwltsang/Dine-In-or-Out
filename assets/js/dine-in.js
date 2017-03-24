@@ -13,7 +13,9 @@ function getRecipe(ingredients) {
     // console.log(queryURL);
 
     $.ajax({
-        crossDomain: true,
+        xhrFields: {
+            withCredentials: true
+        },
         url: queryURL,
         method: "GET"
     }).done(function(recipeResults) {
