@@ -85,18 +85,18 @@
 			</script>
 			<script id="handlebar-template" type="text/x-handlebars-template">
 
-				<h2>We found <span class="recipe-count">{{count}}</span> recipes!</h2> {{#each recipes}}
-				<div class="row" id="result">
+				<h2 class="text-center">We found <span class="recipe-count">{{count}}</span> recipes!</h2> {{#each recipes}}
+				<div class="row row-spacing">
 
-					<div class="col-sm-6"><img src="{{this.image_url}}" style="width:125px;height:125px"></div>
+					<div class="col-sm-4"><img src="{{this.image_url}}" style="width:125px;height:125px"></div>
 
-					<div class="col-sm-6">
+					<div class="col-sm-8">
 						<h3><span id="recipe-title">{{{this.title}}}</span></h3>
 
-						<a class="btn btn-default" href="{{this.f2f_url}}" role="button">Go to recipe</a>
+						<a target="_blank" class="btn btn-success" href="{{this.f2f_url}}" role="button">Go to recipe</a>
 					</div>
 				</div>
-				{{/each}}
+				<hr> {{/each}}
 
 		</div>
 
