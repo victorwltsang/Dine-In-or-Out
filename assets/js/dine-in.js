@@ -13,6 +13,8 @@ function getRecipe(ingredients) {
     // console.log(queryURL);
 
     $.ajax({
+        useDefaultXhrHeader: false,
+        cors: true,
         url: queryURL,
         method: "GET"
     }).done(function(recipeResults) {
