@@ -14,7 +14,7 @@ function getRecipe(ingredients) {
 
     $.ajax({
         xhrFields: {
-            withCredentials: true
+            cors: false
         },
         url: queryURL,
         method: "GET"
