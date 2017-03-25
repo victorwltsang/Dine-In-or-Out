@@ -17,5 +17,6 @@ $(document).ready(function() {
         } else {
             console.log("ERROR!");
         }
+        $("#result").removeClass("hide");
     });
 });

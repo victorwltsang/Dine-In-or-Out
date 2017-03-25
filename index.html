@@ -13,113 +13,123 @@
 	</head>
 
 	<body>
-		<nav id="navbar" class="navbar navbar-default">
-			<div class="container-fluid">
-				<!-- Brand and toggle get grouped for better mobile display -->
-				<div class="navbar-header">
-
-					<a id="button" class="navbar-brand" href="#">Dine In-or-Out</a>
-				</div>
-
-				<!-- Collect the nav links, forms, and other content for toggling -->
-
-				<form class="navbar-form navbar-right">
-
-					<div class="form-group">
-						<input type="text" class="form-control" placeholder="Search">
-					</div>
-					<button type="submit" data-option="dine-in" class="btn btn-default btn-font">Dine In</button>
-					<button type="submit" data-option="dine-out" class="btn btn-default btn-font">Dine Out</button>
-				</form>
-
-				<!-- /.navbar-collapse -->
-			</div>
-			<!-- /.container-fluid -->
-		</nav>
 		<div class="container">
-			<div id="result">
-				<div class="jumbotron">
-					<p>Have too many ingredients in your home's pantry and don't what to make with them?</p>
-					<p>Enter then all in the search box above and click "Dine in" to see what you can make with them Or feeling lazy?</p>
+			<nav id="navbar" class="navbar navbar-default ">
+				<div class="container-fluid">
+					<!-- Brand and toggle get grouped for better mobile display -->
+					<div class="navbar-header">
+						<a id="button" class="navbar-brand" href="#">Dine In-or-Out</a>
+					</div>
+
+					<!-- Collect the nav links, forms, and other content for toggling -->
+
+					<form id="form" class="navbar-form navbar-right ">
+
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="Search">
+						</div>
+						<button id="dine-in" type="submit" data-option="dine-in" class="btn btn-default btn-font">Dine In</button>
+						<button id="dine-out" type="submit" data-option="dine-out" class="btn btn-default btn-font">Dine Out</button>
+					</form>
+
+					<!-- /.navbar-collapse -->
+				</div>
+				<!-- /.container-fluid -->
+			</nav>
+			<div class="container-fluid">
+				<div class="sidebar">
+					<p><span class="glyphicon glyphicon-cutlery"></span> <br>Have too many ingredients in your home's pantry and don't what to make with them?</p>
+					<p>Enter then all in the search box above and click "Dine in" to see what you can make with them.</p>
+					<p> Or feeling lazy?</p>
 					<p>Click "Dine out" and find out what local restaurants can do with all those ingredients!</p>
 				</div>
-			</div>
-			<script id="yelp-template" type="x-handlebars-template">
-				{{#each businesses}}
-				<div class="row row-spacing">
-					<div class="col-sm-6 media">
-
-						<div class="media-left no-float-mobile">
-							<img class="img-rounded" src="{{image_url}}" />
-						</div>
-						<div class="media-body">
-							<a class="display-block link-size" href="{{url}}" target="_blank" alt="See on Yelp!">{{name}}</a>
-
-							<img class="rating-img" src="{{rating_img_url_large}}" />
-							<span class="small">{{review_count}} reviews</span>
-							<div class="food-cat-spacing">
-								{{#each categories}}
-								<span class="food-cat">{{this.[0]}}</span>
-								<span class="food-cat">,</span> {{/each}}
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-6">
-						<p>{{location.neighborhoods}}</p>
-						{{#each location.display_address}}
-						<span class="display-block">{{this}}</span> {{/each}}
-						<span class="display-block">{{phone}}</span>
-					</div>
-					<div class="clearfix"></div>
-					<div class="col-sm-12 snippet-spacing">
-						<div class="media-left">
-							<img class="snippet-img img-rounded" src="{{snippet_image_url}}" />
-						</div>
-						<div class="media-body">
-							<p class="">{{snippet_text}}
-								<a href="{{url}}" target="_blank"> read more </a>
-							</p>
-						</div>
-
-					</div>
+				<div id="result" class="hide">
 
 				</div>
-				<hr> {{/each}}
+				<script id="yelp-template" type="x-handlebars-template">
+					{{#each businesses}}
+					<div class="row row-spacing">
+						<div class="col-sm-6 media">
+
+							<div class="media-left no-float-mobile">
+								<img class="img-rounded" src="{{image_url}}" />
+							</div>
+							<div class="media-body">
+								<a class="display-block link-size" href="{{url}}" target="_blank" alt="See on Yelp!">{{name}}</a>
+
+								<img class="rating-img" src="{{rating_img_url_large}}" />
+								<span class="small">{{review_count}} reviews</span>
+								<div class="food-cat-spacing">
+									{{#each categories}}
+									<span class="food-cat">{{this.[0]}}</span>
+									<span class="food-cat">,</span> {{/each}}
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<p>{{location.neighborhoods}}</p>
+							{{#each location.display_address}}
+							<span class="display-block">{{this}}</span> {{/each}}
+							<span class="display-block">{{phone}}</span>
+						</div>
+						<div class="clearfix"></div>
+						<div class="col-sm-12 snippet-spacing">
+							<div class="media-left">
+								<img class="snippet-img img-rounded" src="{{snippet_image_url}}" />
+							</div>
+							<div class="media-body">
+								<p class="">{{snippet_text}}
+									<a href="{{url}}" target="_blank"> read more </a>
+								</p>
+							</div>
+
+						</div>
+
+					</div>
+					<hr> {{/each}}
+
+
+				</script>
+				<script id="handlebar-template" type="text/x-handlebars-template">
+
+					<h2 id="recipe-header" class="text-center">We found <span class="recipe-count">{{count}}</span> recipes!</h2> {{#each recipes}}
+					<div class="row row-spacing">
+
+						<div class="col-sm-4"><img src="{{this.image_url}}" style="width:125px;height:125px"></div>
+
+						<div class="col-sm-8">
+							<h3><span id="recipe-title">{{{this.title}}}</span></h3>
+
+							<a target="_blank" class="btn btn-success" href="{{this.f2f_url}}" role="button">Go to recipe</a>
+						</div>
+					</div>
+					<hr> {{/each}}
+
+			</div>
+
 
 
 			</script>
-			<script id="handlebar-template" type="text/x-handlebars-template">
 
-				<h2 class="text-center">We found <span class="recipe-count">{{count}}</span> recipes!</h2> {{#each recipes}}
-				<div class="row row-spacing">
-
-					<div class="col-sm-4"><img src="{{this.image_url}}" style="width:125px;height:125px"></div>
-
-					<div class="col-sm-8">
-						<h3><span id="recipe-title">{{{this.title}}}</span></h3>
-
-						<a target="_blank" class="btn btn-success" href="{{this.f2f_url}}" role="button">Go to recipe</a>
-					</div>
-				</div>
-				<hr> {{/each}}
 
 		</div>
-
-		</script>
-
-
+		<div id="footer" class="navbar-default navbar-fix-bottom">
+			<p id="copyright">&copy; 2017 Dine In-or-Out</p>
 		</div>
 
 
 		<script src="https://code.jquery.com/jquery-3.2.0.min.js" integrity="sha256-JAW99MJVpJBGcbzEuXk4Az05s/XyDdBomFqNlM3ic+I=" crossorigin="anonymous"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 		<script type="text/javascript" src="./assets/js/OAuth.js"></script>
+		<script type="text/javascript" src="./assets/js/css.js"></script>
+
 		<script type="text/javascript" src="./assets/js/SHA1.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.min.js"></script>
 		<script src="./assets/js/dine-in.js" type="text/javascript"></script>
 		<script src="./assets/js/dine-out.js" type="text/javascript"></script>
 
 		<script type="text/javascript" src="./assets/js/app.js"></script>
+		</div>
 	</body>
 
 </html>
